@@ -1,0 +1,55 @@
+.container {
+  width: 55rem;
+}
+.h-part {
+  width: 80%;
+}
+.btn-comp .btn {
+  margin-right: 1rem;
+  padding: 0.5rem 3rem;
+  color: white;
+}
+@media screen and (max-width: 610px) {
+  .container {
+    padding: 1.2rem;
+    width: 25rem;
+  }
+  .h-part {
+    width: 90%;
+  }
+
+  .h-comp h1 {
+    font-size: 2.5rem;
+  }
+  .h-comp h3 {
+    font-size: 1.4rem;
+  }
+  .btn-comp {
+    display: flex;
+    gap: 0.5rem;
+  }
+  .btn-comp .btn {
+    padding: 0.5rem 1rem;
+    margin: 0;
+  }
+}
+@media screen and (max-width: 420px) {
+  .container {
+    padding: 1.2rem;
+    width: 100%;
+  }
+  .h-comp h1 {
+    font-size: 1.8rem;
+  }
+  .h-comp h3 {
+    font-size: 0.9rem;
+  }
+  .btn-comp {
+    display: flex;
+    gap: 0.5rem;
+  }
+  .btn-comp .btn {
+    width: max-content;
+    font-size: 12px;
+  }
+}

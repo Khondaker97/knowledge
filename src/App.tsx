@@ -1,26 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { FC } from "react";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
+import Header from "./components/Header/Header";
+import Nav from "./components/Nav/Nav";
+import ArticlePlans from "./pages/ArticlePlans";
+import Articles from "./pages/Articles";
+import ProtectedRoutes from "./routes/ProtectedRoutes";
 
-function App() {
+const App: FC = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Nav />
+        <Routes>
+          <Route path="/" element={<Header />} />
+          <Route path="/articles" element={<ProtectedRoutes />}>
+            <Route path="/articles" element={<Articles />} />
+          </Route>
+          <Route path="/article-plans" element={<ProtectedRoutes />}>
+            <Route path="/article-plans" element={<ArticlePlans />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
-}
+};
 
 export default App;
